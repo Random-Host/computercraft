@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="ComputerCraft LUA scripts : Random LUA scripts for the Computercraft Minecraft mod.">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>ComputerCraft LUA scripts</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/randomhost/computercraft">View on GitHub</a>
+
+          <h1 id="project_title">ComputerCraft LUA scripts</h1>
+          <h2 id="project_tagline">Random LUA scripts for the Computercraft Minecraft mod.</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/randomhost/computercraft/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/randomhost/computercraft/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a id="introduction" class="anchor" href="#introduction" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Introduction</h1>
+
+<p>This small collection of <a href="http://www.computercraft.info/">ComputerCraft</a> LUA APIs and scripts is used on the
+<a href="https://minecraft.net/">Minecraft</a> servers on <a href="https://www.random-host.com/">random-host.com</a>. They may not be very fancy and
+potentially buggy but they sorta do the job.</p>
+
+<p>You can use them if you want but don't expect any support.</p>
+
+<h2>
+<a id="table-of-contents" class="anchor" href="#table-of-contents" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Table of contents</h2>
+
+<ul>
+<li><a href="#available-programs">Available programs</a></li>
+<li><a href="#available-apis">Available APIs</a></li>
+<li><a href="#license">License</a></li>
+</ul>
+
+<h2>
+<a id="available-programs" class="anchor" href="#available-programs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Available programs</h2>
+
+<p>These programs make heavy use of ComputerCraft APIs.</p>
+
+<p>Even though most of the program's code should be self-explanatory, you may wish
+to read the <a href="#available-apis">Available APIs</a> section to learn more about the
+APIs used within these programs and how those API's are used to configure the
+behavior of each individual program.</p>
+
+<p>The following programs are included:</p>
+
+<ul>
+<li>
+<p><code>layer</code></p>
+
+<p>Mines a layer of blocks such as obsidian.</p>
+</li>
+<li>
+<p><code>reactor</code></p>
+
+<p>Controls a passively cooled Big Reactors reactor.</p>
+</li>
+<li>
+<p><code>strip</code></p>
+
+<p>Classical strip mining program.</p>
+</li>
+</ul>
+
+<h2>
+<a id="available-apis" class="anchor" href="#available-apis" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Available APIs</h2>
+
+<p>An API (Application Programming Interface) is a collection of code that, rather
+than being run directly by the user as a program, is meant to be used by other
+programs.</p>
+
+<p>To learn more about ComputerCraft APIs, please refer to the Computercraft Wiki's
+<a href="http://computercraft.info/wiki/Category:APIs">APIs</a> category.</p>
+
+<p>The following APIs are included:</p>
+
+<h3>
+<a id="fuel" class="anchor" href="#fuel" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>fuel</h3>
+
+<p>Provides functions for auto-refueling turtles.</p>
+
+<p>This API is primarily a dependency of the <code>strip</code> API.</p>
+
+<ul>
+<li>
+<p><code>fuel.check()</code>  </p>
+
+<p>Checks the fuel level of the turtle and attempts to refuel using the first
+suitable fuel item found in the turtle's inventory.</p>
+</li>
+</ul>
+
+<h3>
+<a id="gui" class="anchor" href="#gui" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>gui</h3>
+
+<p>Provides functions for printing GUI items on monitors.</p>
+
+<p>This API is primarily a dependency of the <code>reactor</code> API but could be used in
+other programs as well.</p>
+
+<ul>
+<li>
+<p><code>gui.setTextScale(float scale)</code></p>
+
+<p>Sets the text scale to be used for rendering text.</p>
+
+<p>Default: <code>0.5</code></p>
+</li>
+<li>
+<p><code>gui.setDefaultBackgroundColor(number color)</code></p>
+
+<p>Sets the default background color for rendering GUI elements.</p>
+
+<p>Default: <code>colors.black</code></p>
+</li>
+<li>
+<p><code>gui.setDefaultForegroundColor(number color)</code></p>
+
+<p>Sets the default foreground color for rendering GUI elements.</p>
+
+<p>Default: <code>colors.white</code></p>
+</li>
+<li>
+<p><code>gui.setBarBackgroundColor(number color)</code></p>
+
+<p>Sets the background color for bar GUI elements.</p>
+
+<p>Default: <code>colors.green</code></p>
+</li>
+<li>
+<p><code>gui.setBarForegroundColor(number color)</code></p>
+
+<p>Sets the foreground color for bar GUI elements.</p>
+
+<p>Default: <code>colors.white</code></p>
+</li>
+<li>
+<p><code>gui.setStatusBarActiveBackgroundColor(number color)</code></p>
+
+<p>Sets the background color for active status bar sections.</p>
+
+<p>Default: <code>colors.green</code></p>
+</li>
+<li>
+<p><code>gui.setStatusBarActiveForegroundColor(number color)</code></p>
+
+<p>Sets the foreground color for active status bars section.</p>
+
+<p>Default: <code>colors.white</code></p>
+</li>
+<li>
+<p><code>gui.setStatusBarInactiveBackgroundColor(number color)</code></p>
+
+<p>Sets the background color for inactive status bar sections.</p>
+
+<p>Default: <code>colors.gray</code></p>
+</li>
+<li>
+<p><code>gui.setStatusBarInactiveForegroundColor(number color)</code></p>
+
+<p>Sets the foreground color for inactive status bars section.</p>
+
+<p>Default: <code>colors.white</code></p>
+</li>
+<li>
+<p><code>gui.setMonitor(string monitorPosition)</code></p>
+
+<p>Sets the monitor to be used.</p>
+</li>
+<li>
+<p><code>gui.getMonitor()</code></p>
+
+<p>Returns the monitor to be used.</p>
+</li>
+<li>
+<p><code>gui.centerText(string text)</code></p>
+
+<p>Renders the given text horizontally centered.</p>
+</li>
+<li>
+<p><code>gui.displayTitleBar(string text)</code></p>
+
+<p>Renders a title bar with the given text.</p>
+</li>
+<li>
+<p><code>gui.displayFooterBar(string text)</code></p>
+
+<p>Renders a footer bar with the given text.</p>
+</li>
+<li>
+<p><code>gui.displayStatusBar(number x, number y, number length, string value, string label)</code></p>
+
+<p>Renders a colored status bar of the given length.</p>
+</li>
+</ul>
+
+<h3>
+<a id="l10n" class="anchor" href="#l10n" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>l10n</h3>
+
+<p>Provides functions for loading localization strings.</p>
+
+<p>This API is primarily a dependency of all APIs which print text.</p>
+
+<ul>
+<li>
+<p><code>l10n.setLanguage(string language)</code></p>
+
+<p>Sets the language code for the localization to be loaded.</p>
+
+<p>Default: <code>'en'</code></p>
+</li>
+<li>
+<p><code>l10n.getLanguage()</code></p>
+
+<p>Returns the language code for the localization to be loaded.</p>
+</li>
+<li>
+<p><code>l10n.load(string name)</code></p>
+
+<p>Loads the localization file identified by the given name. This will usually
+be the name of the API which will be using the localization strings.</p>
+</li>
+</ul>
+
+<h3>
+<a id="reactor" class="anchor" href="#reactor" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>reactor</h3>
+
+<p>Provide functions for controlling a <a href="http://www.big-reactors.com/">BigReactors</a> reactor.</p>
+
+<ul>
+<li>
+<p><code>reactor.setShutdownThreshold(number threshold)</code></p>
+
+<p>Sets the shutdown threshold. This is the buffer fill level at which the
+reactor will automatically shutdown.</p>
+
+<p>Default: <code>0.75</code> (75%)</p>
+</li>
+<li>
+<p><code>reactor.setStartupThreshold(number threshold)</code></p>
+
+<p>Sets the startup threshold. This is the buffer fill level at which the
+reactor will automatically start up when operating in "auto" mode.</p>
+
+<p>Default: <code>0.50</code> (50%)</p>
+</li>
+<li>
+<p><code>reactor.setShowRodLevelBars(bool enable)</code></p>
+
+<p>Sets if control rod level bars should be shown in the GUI.</p>
+
+<p>Default: <code>true</code></p>
+</li>
+<li>
+<p><code>reactor.setEnableRedstoneControl(bool enable)</code></p>
+
+<p>Sets if auto startup requires a redstone signal. Setting this to <code>true</code> will
+cause the computer which the program is running on to require a redstone
+signal in addition to the reactor's internal buffer fill level being below
+the configured startup threshold before the reactor is started.</p>
+
+<p>This can be used to delegate auto startup control to an external device such
+as <a href="http://enderio.com/">Ender IO</a>'s <a href="http://wiki.enderio.com/Power_Monitor">Power Monitor</a>.</p>
+
+<p>Default: <code>false</code></p>
+</li>
+<li>
+<p><code>reactor.setMonitorName(string monitor)</code></p>
+
+<p>Sets the name of the monitor which the GUI should be displayed on.</p>
+
+<p>Default: <code>'top'</code></p>
+</li>
+<li>
+<p><code>reactor.setReactorName(string reactor)</code></p>
+
+<p>Sets the name of the reactor to be controlled.</p>
+
+<p>Default: <code>'BigReactors-Reactor_0'</code></p>
+</li>
+<li>
+<p><code>reactor.setRedstoneControlInput(string side)</code></p>
+
+<p>Sets redstone control input side. This is the side from which the redstone
+signal for the external redstone control will be provided to the computer.</p>
+
+<p>See <code>reactor.setEnableRedstoneControl()</code> above for more information.</p>
+
+<p>Default: <code>'back'</code></p>
+</li>
+<li>
+<p><code>reactor.setOperationMode(string mode)</code></p>
+
+<p>Sets the operation mode. This sets the initial mode the control program
+operates in (either <code>'auto'</code> or <code>'manual'</code>) when the computer is booted.</p>
+
+<p>The operation mode can be changed at runtime via the GUI.</p>
+
+<p>Default: <code>'manual'</code></p>
+</li>
+<li>
+<p><code>reactor.run()</code></p>
+
+<p>Runs the reactor control program main loop. The program will keep running
+until the user hits a key or terminates the program by holding <code>[CTRL]+[T]</code>. </p>
+</li>
+</ul>
+
+<h3>
+<a id="strip" class="anchor" href="#strip" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>strip</h3>
+
+<p>Provides functions for strip mining using turtles.</p>
+
+<ul>
+<li>
+<p><code>strip.setStripHeight(number height)</code></p>
+
+<p>Sets the height of the strip mining tunnels.</p>
+
+<p>Default: <code>4</code> (4 blocks)</p>
+</li>
+<li>
+<p><code>strip.setStripLength(number length)</code></p>
+
+<p>Sets the length of the strip mining tunnels. This must be an even number.</p>
+
+<p>Default: <code>40</code> (40 blocks)</p>
+</li>
+<li>
+<p><code>strip.setStripCount(number count)</code></p>
+
+<p>Sets the amount of tunnels to dig.</p>
+
+<p>Default: <code>4</code></p>
+</li>
+<li>
+<p><code>strip.setStripInterval(number interval)</code></p>
+
+<p>Sets the interval of the tunnels.</p>
+
+<p>Default: <code>3</code> (every 3 blocks)</p>
+</li>
+<li>
+<p><code>strip.setEnableTorches(bool enable)</code></p>
+
+<p>Enables or disables placing of torches.</p>
+
+<p>Default: <code>true</code></p>
+</li>
+<li>
+<p><code>strip.setTorchSlot(number slot)</code></p>
+
+<p>Sets the storage slot for torches.</p>
+
+<p>Default: <code>16</code> (inventory slot 16, counted from left to right)</p>
+</li>
+<li>
+<p><code>strip.setTorchInterval(number interval)</code></p>
+
+<p>Sets interval for placing torches.</p>
+
+<p>Default: <code>3</code> (every 3 blocks)</p>
+</li>
+<li>
+<p><code>strip.run()</code></p>
+
+<p>Runs the strip mining program with set parameters.</p>
+
+<p>When the program has finished, the turtle will remain at the last position.</p>
+</li>
+</ul>
+
+<h3>
+<a id="torch" class="anchor" href="#torch" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>torch</h3>
+
+<p>Provides functions for placing torches.</p>
+
+<p>This API is primarily a dependency of the <code>strip</code> API.</p>
+
+<ul>
+<li>
+<p><code>torch.setSlot(number slot)</code></p>
+
+<p>Sets the storage slot for torches.</p>
+
+<p>Default: <code>16</code> (inventory slot 16, counted from left to right)</p>
+</li>
+<li>
+<p><code>torch.place(bool placeUp)</code></p>
+
+<p>Places a torch. If <code>placeUp</code> is set to <code>true</code>, the torch will be placed one
+block "above" the turtle's front side, otherwise it will be placed one block
+"below".</p>
+</li>
+</ul>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
+
+<p>See LICENSE.txt for full license details.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">ComputerCraft LUA scripts maintained by <a href="https://github.com/randomhost">randomhost</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
